@@ -13,10 +13,14 @@ import lombok.AllArgsConstructor;
 import sqch11ex2.dto.Payment;
 
 @Component
-@AllArgsConstructor
 public class PaymentsProxy {
 	private final RestTemplate template;
 	
+	public PaymentsProxy(RestTemplate template) {
+		super();
+		this.template = template;
+	}
+
 	public Payment createPayment(Payment payment) {
 		String uri = paymentServiceUrl + "/payment";
 		
